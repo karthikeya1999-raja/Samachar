@@ -1,0 +1,66 @@
+<div class="row">
+  <div class="col-xs-12">
+    <form [formGroup]="contactform" (ngSubmit)="submit()">
+      <div class="row">
+        <div class="col-xs-12">
+          <button type="submit" class="btn btn-success"
+            [disabled]="!contactform.valid">{{editMode ? 'Update' : 'Save'}}</button>
+          <button type="button" class="btn btn-danger" (click)="cancel()">Cancel</button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" class="form-control" formControlName="name">
+          </div>
+        </div>
+      </div>
+
+       <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="imagePath">Image Url</label>
+            <input type="text" id="imagePath" class="form-control" formControlName="imagePath" #imagePath>
+          </div>
+        </div>
+      </div> 
+
+       <div class="row">
+        <div class="col-xs-12">
+          <img [src]="imagePath.value" alt="" class="img-responsive" style="width: 280px; height:200px;">
+        </div>
+      </div> 
+
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="text" id="phone" class="form-control" formControlName="phone">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" id="email" class="form-control" formControlName="email">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="gender">Gender</label>
+            <input type="text" id="gender" class="form-control" formControlName="gender">
+          </div>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>

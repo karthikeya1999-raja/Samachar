@@ -1,0 +1,69 @@
+<div class="row">
+  <div class="col-xs-12">
+    <video #vedio id="vedio"></video>
+    <button type="button" class="glyphicon glyphicon-earphone btn btn-danger" (click)=endCall() *ngIf="onCall"></button>
+  </div>
+</div>
+
+<div *ngIf="!onCall">
+  <div class="row a">
+    <div class="col-md-12">
+      <button class="btn btn-danger" (click)="back()">
+        <span class="glyphicon glyphicon-chevron-left"></span></button>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <div class="col-md-2 x">
+      <button class="btn btn-primary" (click)="previous()" id="pre">
+        <span class="glyphicon glyphicon-chevron-left"></span></button>
+    </div>
+
+    <div class=" col-md-8">
+
+      <div class="row a">
+        <div class="col-md-12">
+          <div class="media">
+            <div class="media-left">
+              <img [src]="contact.imagePath" class="media-object" style="width:150px">
+            </div>
+            <div class="media-body">
+              <h2 class="media-heading">{{contact.name}}</h2>
+              <h4>{{contact.phone}}</h4>
+              <p>{{contact.email}}</p>
+              <p>{{contact.gender}}</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row">
+
+        <div class="col-md-2">
+          <button class="glyphicon glyphicon-pencil btn btn-info" (click)="onEditContact()"></button>
+        </div>
+        <div class="col-md-2">
+          <button class="glyphicon glyphicon-comment btn btn-success" (click)="onMessage()"></button>
+        </div>
+        <div class="col-md-2">
+          <button class="glyphicon glyphicon-facetime-video btn btn-primary" (click)="onVedioCall()"></button>
+        </div>
+        <div class="col-md-2">
+          <button class="glyphicon glyphicon-earphone btn btn-success" (click)="onAudioCall()"></button>
+        </div>
+        <div class="col-md-2">
+          <button class="glyphicon glyphicon-trash btn btn-danger" (click)="onDeleteContact()"></button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="col-md-2 x">
+      <button class="btn btn-primary" (click)="next()" id="next">
+        <span class="glyphicon glyphicon-chevron-right"></span></button>
+    </div>
+
+  </div>
+</div>

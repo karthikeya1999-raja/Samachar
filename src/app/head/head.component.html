@@ -1,0 +1,33 @@
+<div>
+    <h1>SAMACHAR</h1>
+</div>
+
+<nav class="navbar navbar-default bg-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle a" data-toggle="collapse"
+        data-target="#myNavbar">
+          <a  class="navbar-brand a">#</a>
+      </button>
+      <a class="navbar-brand a">Samachar</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="nav-item" routerLinkActive="active" *ngIf="isAuthenticated">
+          <a class="nav-link" routerLink="/contact">Contacts</a></li>
+        <li class="nav-item" routerLinkActive="active" *ngIf="isAuthenticated">
+          <a class="nav-link" routerLink="/message">Message</a></li>
+        <li class="nav-item" routerLinkActive="active" *ngIf="!isAuthenticated">
+          <a class="nav-link" routerLink="/auth">Authenticate</a></li>
+        <li class="nav-item" routerLinkActive="active" *ngIf="isAuthenticated">
+          <a class="nav-link" routerLink="/call">Call</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right" *ngIf="isAuthenticated">
+        <li><a (click) = "logout()" class="a">
+          <span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+          <!-- <li><a (click)="fetchContacts()" class="a">
+              <span class="glyphicon glyphicon-save"></span> FetchContacts</a></li> -->
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+
+    <div class="row">
+      <div class="col-xs-12">
+        <label for="rcv">Receiver Number</label>
+        <input type="text" id="rcv" [(ngModel)]="receiver">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-2">
+        <button type="button" (click)=onAudioCall() [disabled] = "isCallOn"
+        class="glyphicon glyphicon-earphone btn btn-success"></button>
+      </div>
+
+      <div class="col-xs-2">
+        <button type="button" (click)=onVedioCall() [disabled] = "isCallOn"
+        class="glyphicon glyphicon-facetime-video btn btn-success"></button>
+      </div>
+
+      <div class="col-xs-2">
+        <button type="button" (click)=onEnd() [disabled] = "!isCallOn"
+        class="glyphicon glyphicon-earphone btn btn-danger"></button>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12" >
+        <video #vedio id="vedio"></video>
+      </div>
+    </div>
+
+  </div>
+</div>
+

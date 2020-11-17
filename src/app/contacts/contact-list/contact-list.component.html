@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-success" (click)="onNewContact()">
+      <span class="glyphicon glyphicon-user"></span> New Contact</button>
+  </div>
+</div>
+<div class="row pre-scrollable">
+  <div class="col-xs-12">
+    <app-contact-item *ngFor="let con of contacts; let i = index" [contact]="con" [index]="i">
+    </app-contact-item>
+  </div>
+</div>

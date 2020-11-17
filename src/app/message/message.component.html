@@ -1,0 +1,28 @@
+<div class="container">
+
+    <div class="row" *ngIf="receiverId">
+      <div class="col-xs-12">
+        <h3>To : {{receiverName}}</h3>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="!receiverId">
+        <div class="col-xs-12">
+            <label for="num">Receiver number</label>
+            <input type="text" id="num" name="num" [(ngModel)]="receiverId">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <label for="msg">Message</label>
+            <textarea name="msg" id="msg" cols="50" rows="8" [(ngModel)]="smsg"></textarea>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-6">
+            <button type="button" (click) = sendMessage() class="btn btn-success">Send</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<a [routerLink]=[index] style="cursor: pointer;" class="list-group-item clearfix" routerLinkActive="active">
+
+  <div class="media">
+    <div class="media-left">
+      <img [src]="contact.imagePath" class="media-object" style="width:80px">
+    </div>
+    <div class="media-body">
+      <h4 class="media-heading">{{contact.name}}</h4>
+      <p>{{contact.phone}}</p>
+    </div>
+  </div>
+
+</a>
